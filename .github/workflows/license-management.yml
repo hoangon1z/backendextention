@@ -26,12 +26,19 @@ jobs:
         with:
           node-version: '16'
       
+      - name: Install Dependencies
+        run: npm install
+      
       - name: Generate License
+        env:
+          CUSTOMER_NAME: ${{ github.event.inputs.customer_name }}
+          MAX_DEVICES: ${{ github.event.inputs.max_devices }}
+          DURATION: ${{ github.event.inputs.duration }}
         run: |
-          node scripts/generate-licenses.js \
-            --customer "${{ github.event.inputs.customer_name }}" \
-            --max-devices "${{ github.event.inputs.max_devices }}" \
-            --duration "${{ github.event.inputs.duration }}"
+          npx node scripts/generate-licenses.js \
+            --customer "$CUSTOMER_NAME" \
+            --max-devices "$MAX_DEVICES" \
+            --duration "$DURATION"
       
       - name: Commit and Push
         run: |
@@ -40,3 +47,14 @@ jobs:
           git add database/licenses.json
           git commit -m "Add new license for ${{ github.event.inputs.customer_name }}"
           git push
+      
+      - name: Notify Telegram
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_CHAT_ID }}
+          token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          message: |
+            🔑 New License Generated
+            Customer: ${{ github.event.inputs.customer_name }}
+            Max Devices: ${{ github.event.inputs.max_devices }}
+            Duration: ${{ github.event.inputs.duration }} days
