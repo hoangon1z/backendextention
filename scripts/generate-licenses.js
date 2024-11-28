@@ -1,11 +1,11 @@
+#!/usr/bin/env node
+const { program } = require('commander');
 const crypto = require('crypto');
 const fs = require('fs');
 const path = require('path');
-const { program } = require('commander');
 
-// Cấu hình CLI
 program
-  .option('--customer <name>', 'Tên khách hàng')
+  .option('--customer <name>', 'Tên khách hàng', 'Unknown')
   .option('--max-devices <number>', 'Số thiết bị tối đa', '3')
   .option('--duration <days>', 'Thời hạn (ngày)', '365')
   .parse(process.argv);
@@ -29,7 +29,6 @@ function createLicense(options) {
     status: 'active'
   };
 
-  // Đọc file licenses hiện tại
   const licensesPath = path.join(__dirname, '../database/licenses.json');
   let licenses = {};
   
@@ -41,15 +40,16 @@ function createLicense(options) {
     console.error('Lỗi đọc file licenses:', error);
   }
 
-  // Thêm license mới
   licenses[licenseKey] = licenseDetails;
 
-  // Ghi lại file
+  // Đảm bảo thư mục tồn tại
+  fs.mkdirSync(path.dirname(licensesPath), { recursive: true });
+
   fs.writeFileSync(licensesPath, JSON.stringify(licenses, null, 2), 'utf8');
 
-  console.log('License được tạo:', licenseDetails);
+  console.log('License được tạo:', JSON.stringify(licenseDetails, null, 2));
   return licenseDetails;
 }
 
-// Tạo license với các tham số từ CLI
+// Thực thi tạo license với các tùy chọn từ command line
 createLicense(program.opts());
