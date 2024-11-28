@@ -1,0 +1,11 @@
+{
+  "e10ad23162853cd0753b30473014390a": {
+    "key": "e10ad23162853cd0753b30473014390a",
+    "customerName": "11111111",
+    "createdAt": "2024-11-28T05:05:46.981Z",
+    "expiryDate": "2025-11-28T05:05:46.981Z",
+    "maxDevices": 1,
+    "devices": [],
+    "status": "active"
+  }
+}
