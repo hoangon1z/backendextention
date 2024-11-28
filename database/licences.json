@@ -1,0 +1,11 @@
+{
+    "8f7a1b2c3d4e5f6g7h8i9j": {
+      "key": "8f7a1b2c3d4e5f6g7h8i9j",
+      "customerName": "Khách Hàng Đầu Tiên",
+      "createdAt": "2024-02-15T10:30:00Z",
+      "expiryDate": "2025-02-15T10:30:00Z",
+      "maxDevices": 3,
+      "devices": [],
+      "status": "active"
+    }
+  }

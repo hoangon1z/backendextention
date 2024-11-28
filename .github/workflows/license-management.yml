@@ -1,0 +1,42 @@
+name: License Management Workflow
+
+on:
+  workflow_dispatch:
+    inputs:
+      customer_name:
+        description: 'Tên khách hàng'
+        required: true
+      max_devices:
+        description: 'Số thiết bị tối đa'
+        required: false
+        default: '3'
+      duration:
+        description: 'Thời hạn (ngày)'
+        required: false
+        default: '365'
+
+jobs:
+  generate-license:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+      
+      - name: Generate License
+        run: |
+          node scripts/generate-licenses.js \
+            --customer "${{ github.event.inputs.customer_name }}" \
+            --max-devices "${{ github.event.inputs.max_devices }}" \
+            --duration "${{ github.event.inputs.duration }}"
+      
+      - name: Commit and Push
+        run: |
+          git config user.name "GitHub Actions Bot"
+          git config user.email "<>"
+          git add database/licenses.json
+          git commit -m "Add new license for ${{ github.event.inputs.customer_name }}"
+          git push

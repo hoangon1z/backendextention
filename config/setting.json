@@ -1,0 +1,11 @@
+{
+    "license_management": {
+      "default_max_devices": 3,
+      "default_license_duration": 365,
+      "notification_email": "your-email@example.com"
+    },
+    "telegram_bot": {
+      "bot_token": "7721620070:AAFlPB15HYJaXI3ZI1joontGI1SO--kxm1o",
+      "chat_id": "6127685762"
+    }
+  }
