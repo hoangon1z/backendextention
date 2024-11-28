@@ -1,0 +1,11 @@
+{
+    "name": "web-editor-licenses",
+    "version": "1.0.0",
+    "description": "License management for Web Content Editor",
+    "scripts": {
+      "generate-license": "node scripts/generate-licenses.js"
+    },
+    "dependencies": {
+      "commander": "^9.5.0"
+    }
+  }
