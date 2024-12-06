@@ -1,1 +1,11 @@
-
+{
+  "71c8b6fc63b0a10fb738a9b5bc891f3b": {
+    "key": "71c8b6fc63b0a10fb738a9b5bc891f3b",
+    "customerName": "Gia Toan Media",
+    "createdAt": "2024-12-06T14:56:27.099Z",
+    "expiryDate": "2025-12-06T14:56:27.099Z",
+    "maxDevices": 3,
+    "devices": [],
+    "status": "active"
+  }
+}
