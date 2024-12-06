@@ -13,7 +13,7 @@
     "customerName": "adstoan",
     "createdAt": "2024-12-06T17:32:00.557Z",
     "expiryDate": "2025-01-05T17:32:00.556Z",
-    "maxDevices": 2,
+    "maxDevices": 1,
     "devices": [],
     "status": "active"
   }
