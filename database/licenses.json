@@ -67,7 +67,7 @@
     "customerName": "dhsisbsb",
     "createdAt": "2024-12-16T11:17:09.236Z",
     "expiryDate": "2025-12-16T11:17:09.235Z",
-    "maxDevices": 1,
+    "maxDevices": 2,
     "devices": [],
     "status": "active"
   }
