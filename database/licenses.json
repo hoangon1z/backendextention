@@ -58,7 +58,7 @@
     "customerName": "38478378",
     "createdAt": "2024-12-16T05:34:18.294Z",
     "expiryDate": "2025-12-16T05:34:18.294Z",
-    "maxDevices": 1,
+    "maxDevices": 2,
     "devices": [],
     "status": "active"
   }
