@@ -70,5 +70,14 @@
     "maxDevices": 2,
     "devices": [],
     "status": "active"
+  },
+  "299c33b7e28a8c55215bc30bef0bad45": {
+    "key": "299c33b7e28a8c55215bc30bef0bad45",
+    "customerName": "hoangtstttt",
+    "createdAt": "2024-12-26T18:51:57.007Z",
+    "expiryDate": "2025-12-26T18:51:57.006Z",
+    "maxDevices": 3,
+    "devices": [],
+    "status": "active"
   }
 }
