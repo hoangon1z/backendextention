@@ -88,5 +88,14 @@
     "maxDevices": 3,
     "devices": [],
     "status": "active"
+  },
+  "c1af38ed57258818215113c6d93bfe8d": {
+    "key": "c1af38ed57258818215113c6d93bfe8d",
+    "customerName": "okvip6781",
+    "createdAt": "2025-08-26T17:25:48.970Z",
+    "expiryDate": "2026-08-26T17:25:48.970Z",
+    "maxDevices": 1,
+    "devices": [],
+    "status": "active"
   }
 }
